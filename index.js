@@ -4,6 +4,7 @@ let timer;
 let previousEvent;
 let currentEvent;
 let blurCheck = false;
+let lols;
 const resumeLink = document.querySelector('#resumeLink');
 const fishLink = document.querySelector('#fishLink');
 const webLink = document.querySelector('#webLink');
@@ -75,8 +76,14 @@ function blurRetract(id){
     id.style.display = 'block';
     id.style.pointerEvents = 'none';
     if (lols === true){
-   id.style.animation = 'blurRetract 0.2s ease .2s normal forwards'; 
+        id.style.height = '200px';
+        id.style.animation = 'blurRetract 0.2s ease .2s normal forwards'; 
    
+ }
+ else {
+    id.style.animation = 'none';
+    id.style.display = 'block';
+    id.style.pointerEvents = 'none';
  }
  clearTimeout(blurTimer);
  lols = false;
@@ -127,8 +134,13 @@ document.querySelector('#taskbarBlur').addEventListener('animationend', (event) 
     
 });
 
-document.querySelector('.taskbarButtons').addEventListener('mouseleave', () => {
+
  
+
+document.querySelector('.taskbarButtons').addEventListener('mouseleave', () => {
+ if(taskbarBlur.style.height === '190px'){
+    taskbarBlur.style.height = '200px';
+ }
   
   
     blurRetract(taskbarBlur);
