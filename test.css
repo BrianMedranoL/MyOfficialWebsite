@@ -1,0 +1,18 @@
+body {
+  background-image: url("Images/palm.jpg");
+}
+.moron {
+  background-color: rgba(0, 0, 0, 0.726);
+  width: 100%;
+  height: 70px;
+ 
+}
+.moronz {
+  background-color: rgba(0, 0, 0, 0.726);
+  width: 100%;
+  height: 70px;
+  
+}
+.lol  {
+  backdrop-filter: blur(10px);
+}

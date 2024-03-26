@@ -1,0 +1,203 @@
+body {
+  background-color: #000000;
+  font-family: "M PLUS Rounded 1c";
+  font-weight: 400;
+  color: aliceblue;
+  background-image: url("Images/palm.jpg"); 
+  margin: 0px;
+  overflow-x: hidden;
+  z-index: -2;
+}
+/*.tbadBlur .dropdown{
+  backdrop-filter: blur(10px);
+}
+*/
+.taskbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 10;
+  background-color: none;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: -5px;
+ 
+}
+#taskbarBlur {
+
+  position:fixed;
+  z-index: 1; 
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.77);
+  text-align: left;
+}
+
+.taskbarButtons {
+  display: flex;
+}
+.taskbarButtons button {
+  margin-left: 20px;
+}
+.buttons {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "M PLUS Rounded 1c";
+  font-weight: 350;
+  width: 100px;
+  font-size: 15.1px;
+  border: none;
+  height: 50px;
+}
+.buttons::after {
+  margin-left: 5px;
+  color: rgb(255, 255, 255);
+  content: "  \276f";
+  font-weight: bold;
+  font-size: 19px;
+  display: inline-block;
+  vertical-align: center;
+  transform: rotate(90deg) translateY(-5px) translateX(2px);
+  transition: transform 0.3s ease-out;
+}
+.buttons:hover::after,
+.buttons:focus::after {
+  transform: rotate(270deg) translateY(4px) !important;
+  color: rgb(153, 153, 153);
+}
+.buttons:hover,
+.buttons:focus {
+  color: rgb(153, 153, 153);
+}
+#aboutMeTab {
+  width: 100px;
+}
+#homeTab {
+  width: 50px;
+}
+#homeTab::after {
+  content: "	\265e";
+  font-size: 30px;
+  transition: transform 0.3s ease-out;
+  transform: translateY(1px) translateX() rotate(90deg);
+}
+#homeTab:hover::after,
+#homeTab:focus::after {
+  transform: rotate(0deg) !important;
+}
+.searchBar input {
+  background-color: transparent;
+  border: rgb(153, 153, 153) 1px solid;
+  border-radius: 5px;
+  height: 32px;
+  width: 325px;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+#gitHub {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: inline;
+  flex-direction: row;
+  border: rgb(255, 255, 255) 1px solid;
+  border-radius: 5px;
+  height: 32px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 75px;
+  font-family: "M PLUS Rounded 1c";
+  font-weight: 350;
+  font-size: 15.1px;
+  cursor: pointer;
+}
+
+#gitHub:hover {
+  color: rgb(153, 153, 153);
+  border-color: rgb(153, 153, 153);
+}
+
+@media (max-width: 1011px) {
+  #idSearchBar {
+    display: none;
+  }
+  .taskbar {
+    justify-content: center;
+  }
+  #gitHub {
+    margin-left: 40px;
+  }
+}
+
+.searchBar input:hover {
+  background-color: #7a7a7a00;
+}
+.paragraph p {
+  font-size: 500px;
+  margin-top: 30px;
+  max-width: 100%;
+  text-align: center;
+z-index: -2;
+}
+.taskbarButtons a {
+  display:block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-left: 20px;
+ 
+}
+#webLink:hover, #fishLink:hover, #crtLink:hover, #resumeLink:hover{
+  color: rgb(153, 153, 153);
+}
+.dropdown {
+  position: absolute;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.77);
+  margin-top: 50px;
+  text-align: left;
+  width: 100%;
+  height: 200px;
+  display: none;
+ backdrop-filter: blur(10px); 
+  z-index: 0;
+
+}
+
+@keyframes scaleDownFromTop {
+  from {
+    transform: scaleY(0%);
+    transform-origin: top;
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(100%);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes scaleTopFromDown {
+  from {
+    transform: scaleY(100%);
+    transform-origin: top;
+    opacity: 1;
+  }
+  to {
+    transform: scaleY(0%);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes opacityFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
