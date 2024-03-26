@@ -8,11 +8,9 @@ body {
   overflow-x: hidden;
   z-index: -2;
 }
-/*.tbadBlur .dropdown{
-  backdrop-filter: blur(10px);
-}
-*/
+
 .taskbar {
+  background-color: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,15 +24,20 @@ body {
   height: 50px;
   padding-top: 10px;
   padding-bottom: -5px;
- 
+
 }
 #taskbarBlur {
 
-  position:fixed;
-  z-index: 1; 
-  backdrop-filter: blur(10px);
+  position: fixed;
+  
   background-color: rgba(0, 0, 0, 0.77);
+ height: 50px;
   text-align: left;
+  width: 100%;
+ 
+  display: block;
+ backdrop-filter: blur(10px); 
+  z-index: 0;
 }
 
 .taskbarButtons {
@@ -158,13 +161,13 @@ z-index: -2;
 .dropdown {
   position: absolute;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.77);
+ 
   margin-top: 50px;
   text-align: left;
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: none;
- backdrop-filter: blur(10px); 
+ /*backdrop-filter: blur(10px); */
   z-index: 0;
 
 }
@@ -199,5 +202,27 @@ z-index: -2;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes blurExpand {
+  from {
+    height: 50px;
+    opacity: 1;
+  }
+  to {
+    height: 200px;
+    opacity: 1;
+  }
+}
+
+@keyframes blurRetract {
+  from {
+    height: 200px;
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    height: 50px;
   }
 }

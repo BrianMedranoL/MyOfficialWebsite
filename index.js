@@ -3,7 +3,7 @@ let taskbarCount;
 let timer;
 let previousEvent;
 let currentEvent;
-
+let blurCheck = false;
 const resumeLink = document.querySelector('#resumeLink');
 const fishLink = document.querySelector('#fishLink');
 const webLink = document.querySelector('#webLink');
@@ -12,7 +12,9 @@ const retractAnimation = document.querySelector('.dropdown ');
 const projectTabLink = document.querySelector('#projectTab');
 const resumeTabLink = document.querySelector('#resumeTab');
 const aboutMeTabLink = document.querySelector('#aboutMeTab');
-const taskbarButtons = document.querySelector('.taskbarButtons')
+const taskbarButtons = document.querySelector('.taskbarButtons');
+const taskbarBlur = document.querySelector('#taskbarBlur');
+
 function colorWhite(id,){
     id.style.color = 'rgb(255, 255, 255)';
 }
@@ -61,31 +63,84 @@ function opacityFade(id) {
     }, 445);
 }
 
-function animationEnter(){
+function blurExpand(id){
+    
+        taskbarBlur.style.animation = 'blurExpand 0.4s ease 0.2s normal forwards';
+     
+   
+
+}
+function blurRetract(id){
+    id.style.animation = 'none';
+    id.style.display = 'block';
+    id.style.pointerEvents = 'none';
+    if (lols === true){
+   id.style.animation = 'blurRetract 0.2s ease .2s normal forwards'; 
+   
+ }
+ clearTimeout(blurTimer);
+ lols = false;
+}
+function animationEnter(id){
  
-    retractAnimation.style.opacity = 0;
-    retractAnimation.style.animation = 'scaleDownFromTop 0.4s ease 0.2s normal forwards';
-    retractAnimation.style.display = 'block';
-    retractAnimation.style.pointerEvents = 'auto';
+    id.style.opacity = 0;
+    id.style.animation = 'scaleDownFromTop 0.4s ease 0.2s normal forwards';
+    id.style.display = 'block';
+    id.style.pointerEvents = 'auto';
     
 }
 
-function animationExit(){
+function animationExit(id){
    
-    retractAnimation.style.animation = 'none';
-    retractAnimation.style.opacity = 0;
-    retractAnimation.style.pointerEvents = 'none';
+    id.style.animation = 'none';
+    id.style.opacity = 0;
+    id.style.pointerEvents = 'none';
     if (taskbarCount === true){
-        retractAnimation.style.animation = 'scaleTopFromDown .2s ease .2s normal forwards';
-        retractAnimation.style.opacity = 1;
+        id.style.animation = 'scaleTopFromDown .2s ease .2s normal forwards';
+        id.style.opacity = 1;
     }
     clearTimeout(taskbarTimer); 
     taskbarCount = false; 
 }
 
 document.querySelector('.taskbarButtons').addEventListener('mouseenter', () => {
+    blurExpand(taskbarBlur);
+    blurTimer = setTimeout(() => {
+        lols = true;
    
-   animationEnter();
+    }, 500);
+   
+});
+document.querySelector('#taskbarBlur').addEventListener('animationend', (event) => {
+    blurTimer = setTimeout(() => {
+        if (event.animationName === 'blurExpand') {
+            taskbarBlur.style.height = '200px';
+          
+          }
+          else if (event.animationName !== 'blurExpand') {
+              taskbarBlur.style.height = '50px';
+              taskbarBlur.style.animation = 'none';
+          }
+   
+    }, 10);
+   
+    
+});
+
+document.querySelector('.taskbarButtons').addEventListener('mouseleave', () => {
+ 
+  
+  
+    blurRetract(taskbarBlur);
+    taskbarBlur.style.pointerEvents = 'none';
+    
+
+});
+
+
+document.querySelector('.taskbarButtons').addEventListener('mouseenter', () => {
+   
+   animationEnter(retractAnimation);
 
     taskbarTimer = setTimeout(() => {
         taskbarCount = true;
@@ -95,7 +150,7 @@ document.querySelector('.taskbarButtons').addEventListener('mouseenter', () => {
 
 document.querySelector('.taskbarButtons').addEventListener('mouseleave', () => {
     
-    animationExit();
+    animationExit(retractAnimation);
     
     taskbarTimer = setTimeout(() => {
      
