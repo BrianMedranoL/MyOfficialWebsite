@@ -78,8 +78,7 @@ function blurRetract(id){
     if (lols === true){
         id.style.height = '200px';
         id.style.animation = 'blurRetract 0.2s ease .2s normal forwards'; 
-   
- }
+    }
  else {
     id.style.animation = 'none';
     id.style.display = 'block';
