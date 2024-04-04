@@ -15,6 +15,13 @@ const resumeTabLink = document.querySelector('#resumeTab');
 const aboutMeTabLink = document.querySelector('#aboutMeTab');
 const taskbarButtons = document.querySelector('.taskbarButtons');
 const taskbarBlur = document.querySelector('#taskbarBlur');
+const psWebsite = document.querySelector('#psWebsite');
+const psRadioG = document.querySelector('#psRadioG');
+const psFishing = document.querySelector('#psFishing');
+
+
+
+
 
 function colorWhite(id,){
     id.style.color = 'rgb(255, 255, 255)';
@@ -132,9 +139,6 @@ document.querySelector('#taskbarBlur').addEventListener('animationend', (event) 
    
     
 });
-
-
- 
 
 document.querySelector('.taskbarButtons').addEventListener('mouseleave', () => {
  if(taskbarBlur.style.height === '190px'){

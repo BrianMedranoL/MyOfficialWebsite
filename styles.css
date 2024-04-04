@@ -1,14 +1,17 @@
 body {
-  background-color: #000000;
+ background-color: #0c0a16; 
+
   font-family: "M PLUS Rounded 1c";
   font-weight: 400;
   color: aliceblue;
-  background-image: url("Images/palm.jpg"); 
+  /*background-image: url("Images/palm.jpg"); */
   margin: 0px;
   overflow-x: hidden;
   z-index: -2;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 .taskbar {
   background-color: none;
   display: flex;
@@ -24,28 +27,24 @@ body {
   height: 50px;
   padding-top: 10px;
   padding-bottom: -5px;
-
 }
 #taskbarBlur {
-
   position: fixed;
-  
+
   background-color: rgba(0, 0, 0, 0.77);
- height: 50px;
+  height: 50px;
   text-align: left;
   width: 100%;
- 
+
   display: block;
- backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   z-index: 0;
 }
 
 .taskbarButtons {
   display: flex;
 }
-.taskbarButtons button {
-  margin-left: 20px;
-}
+
 .buttons {
   background-color: transparent;
   color: rgb(255, 255, 255);
@@ -57,25 +56,9 @@ body {
   border: none;
   height: 50px;
 }
-.buttons::after {
-  margin-left: 5px;
-  color: rgb(255, 255, 255);
-  content: "  \276f";
-  font-weight: bold;
-  font-size: 19px;
-  display: inline-block;
-  vertical-align: center;
-  transform: rotate(90deg) translateY(-5px) translateX(2px);
-  transition: transform 0.3s ease-out;
-}
-.buttons:hover::after,
-.buttons:focus::after {
-  transform: rotate(270deg) translateY(4px) !important;
-  color: rgb(153, 153, 153);
-}
-.buttons:hover,
-.buttons:focus {
-  color: rgb(153, 153, 153);
+
+#projectTab {
+  margin-left: 20px;
 }
 #aboutMeTab {
   width: 100px;
@@ -83,16 +66,7 @@ body {
 #homeTab {
   width: 50px;
 }
-#homeTab::after {
-  content: "	\265e";
-  font-size: 30px;
-  transition: transform 0.3s ease-out;
-  transform: translateY(1px) translateX() rotate(90deg);
-}
-#homeTab:hover::after,
-#homeTab:focus::after {
-  transform: rotate(0deg) !important;
-}
+
 .searchBar input {
   background-color: transparent;
   border: rgb(153, 153, 153) 1px solid;
@@ -145,32 +119,99 @@ body {
   margin-top: 30px;
   max-width: 100%;
   text-align: center;
-z-index: -2;
+  z-index: -2;
 }
 .taskbarButtons a {
-  display:block;
+  display: block;
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 10px;
   margin-left: 20px;
- 
 }
-#webLink:hover, #fishLink:hover, #crtLink:hover, #resumeLink:hover{
+#webLink:hover,
+#fishLink:hover,
+#crtLink:hover,
+#resumeLink:hover {
   color: rgb(153, 153, 153);
 }
 .dropdown {
   position: absolute;
   left: 0;
- 
+
   margin-top: 50px;
   text-align: left;
   width: 100%;
   height: 150px;
   display: none;
- /*backdrop-filter: blur(10px); */
+  /*backdrop-filter: blur(10px); */
   z-index: 0;
-
 }
+
+.projectScroll {
+  height: 500px;
+  width: 75%;
+  background-color: #171b22;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid rgb(39, 44, 51);
+  border-radius: 20px;
+ 
+  /* box-shadow: 0px 10px 2500px rgba(138, 137, 137, 0.068); */
+}
+.psElement{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+ background-color: #14171d;
+  display: none;
+}
+#psRadioG{
+  background-color: #252e33;
+display: none;
+}
+#psFishing{
+  background-color: rgb(30, 58, 51);
+display: none;
+}
+.circleB{
+  width: 50px;
+height: 50px;
+border-radius: 50% ;
+border: 1px solid rgb(39, 44, 51);
+background-color: transparent;
+position: absolute;
+margin-top: 225px;
+}
+#rightB{
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes scaleDownFromTop {
   from {
