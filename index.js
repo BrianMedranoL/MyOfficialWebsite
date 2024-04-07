@@ -18,6 +18,7 @@ const taskbarBlur = document.querySelector('#taskbarBlur');
 const psWebsite = document.querySelector('#psWebsite');
 const psRadioG = document.querySelector('#psRadioG');
 const psFishing = document.querySelector('#psFishing');
+const circleB = document.querySelector('#leftB');
 
 
 
@@ -219,3 +220,10 @@ document.querySelector('#aboutMeTab').addEventListener('mouseenter', () => {
         return 0;
     }
 });
+
+
+
+
+    circleB.addEventListener('mouseenter', () => {
+        circleB.style.color = 'rgb(153, 153, 153)';
+    });

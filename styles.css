@@ -156,7 +156,7 @@ body {
   margin-top: 20px;
   border: 1px solid rgb(39, 44, 51);
   border-radius: 20px;
- 
+justify-content: space-between;
   /* box-shadow: 0px 10px 2500px rgba(138, 137, 137, 0.068); */
 }
 .psElement{
@@ -167,29 +167,42 @@ body {
   display: none;
 }
 #psRadioG{
+
   background-color: #252e33;
-display: none;
+display: flex;
 }
 #psFishing{
   background-color: rgb(30, 58, 51);
 display: none;
 }
 .circleB{
+ text-align: center;
   width: 50px;
 height: 50px;
 border-radius: 50% ;
 border: 1px solid rgb(39, 44, 51);
 background-color: transparent;
-position: absolute;
+
 margin-top: 225px;
 }
-#rightB{
- 
+#leftB::after{
+content: "\276E";
+color: rgb(255, 255, 255);
+font-size: 27px;
+display: block;
 }
-
-
-
-
+#rightB::after{
+  content: "\276F";
+  color: rgb(255, 255, 255);
+  font-size: 27px;
+  display: block;
+}
+#rightB:hover:after{
+  color: rgb(153, 153, 153);
+}
+#leftB:hover::after{
+  color: rgb(153, 153, 153);
+  }
 
 
 
