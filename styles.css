@@ -38,7 +38,7 @@ body {
 
   display: block;
   backdrop-filter: blur(10px);
-  z-index: 0;
+  z-index: 8;
 }
 
 .taskbarButtons {
@@ -148,6 +148,8 @@ body {
 }
 
 .projectScroll {
+ position: relative;
+  overflow-x: hidden;
   height: 500px;
   width: 75%;
   background-color: #171b22;
@@ -167,9 +169,10 @@ justify-content: space-between;
   display: none;
 }
 #psRadioG{
-
+position: absolute;
   background-color: #252e33;
-display: flex;
+margin-right: 0px;
+  display: flex;
 }
 #psFishing{
   background-color: rgb(30, 58, 51);
@@ -182,7 +185,7 @@ height: 50px;
 border-radius: 50% ;
 border: 1px solid rgb(39, 44, 51);
 background-color: transparent;
-
+z-index: 2;
 margin-top: 225px;
 }
 #leftB::after{
@@ -216,16 +219,16 @@ display: block;
 
 
 
-
-
-
-
-
-
-
-
-
-
+  @keyframes translateLeft {
+    from {
+      transform: translateX(0);
+      
+    }
+    to {
+      transform: translateX(-1500px);
+    
+    }
+  }
 @keyframes scaleDownFromTop {
   from {
     transform: scaleY(0%);

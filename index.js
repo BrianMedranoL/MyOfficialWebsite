@@ -5,6 +5,7 @@ let previousEvent;
 let currentEvent;
 let blurCheck = false;
 let lols;
+let currentPs = 'radio';
 const resumeLink = document.querySelector('#resumeLink');
 const fishLink = document.querySelector('#fishLink');
 const webLink = document.querySelector('#webLink');
@@ -20,8 +21,27 @@ const psRadioG = document.querySelector('#psRadioG');
 const psFishing = document.querySelector('#psFishing');
 const circleB = document.querySelector('#leftB');
 
+function psChecker(){
+    
+    if (currentPs === 'radio' ){
+        psRadioG.style.display = 'flex';
+        psWebsite.style.display = 'none';
+        psFishing.style.display = 'none';
+    }
+    
+    if (currentPs === 'website' ){
+        psRadioG.style.display = 'none';
+        psWebsite.style.display = 'flex';
+        psFishing.style.display = 'none';
+    }
+    
+    if (currentPs === 'radio' ){
+        psRadioG.style.display = 'none';
+        psWebsite.style.display = 'none';
+        psFishing.style.display = 'flex';
+    }
 
-
+}
 
 
 function colorWhite(id,){
@@ -220,10 +240,8 @@ document.querySelector('#aboutMeTab').addEventListener('mouseenter', () => {
         return 0;
     }
 });
+circleB.addEventListener('click',() => {
+    psRadioG.style.animation = 'translateLeft .2s ease .2s normal forwards';
 
 
-
-
-    circleB.addEventListener('mouseenter', () => {
-        circleB.style.color = 'rgb(153, 153, 153)';
-    });
+});
